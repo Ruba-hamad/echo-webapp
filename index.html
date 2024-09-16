@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Input Echo Web App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 50px;
+            text-align: center;
+        }
+        h1 {
+            color: #4CAF50;
+        }
+        input[type="text"] {
+            padding: 10px;
+            width: 300px;
+            font-size: 16px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            margin-top: 10px;
+        }
+        #output {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Echo User Input</h1>
+
+    <p>Enter some text below and it will be echoed on the screen:</p>
+
+    <input type="text" id="userInput" placeholder="Enter something here..." />
+    <br>
+    <button onclick="echoInput()">Submit</button>
+
+    <div id="output"></div>
+
+    <script>
+        function echoInput() {
+            const input = document.getElementById("userInput").value;
+            const outputDiv = document.getElementById("output");
+
+            if(input) {
+                outputDiv.innerHTML = `<p>You entered: <strong>${input}</strong></p>`;
+            } else {
+                outputDiv.innerHTML = "<p style='color:red;'>Please enter something!</p>";
+            }
+        }
+    </script>
+
+</body>
+</html>
